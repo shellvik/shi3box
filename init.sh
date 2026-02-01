@@ -89,13 +89,12 @@ fix_locale
 
 #----------------------------i3-------------------------------------------
 [ -d "$HOME/.config/i3" ] && mv "$HOME/.config/i3" "$HOME/.config/i3.bak"
-sudo cp -r "$SCRIPT_DIR/config/i3" "$HOME/.config/"
-
+sudo cp -r "$SCRIPT_DIR/config/i3" "$HOME/.config/" && echo "Copied i3 configs"
 
 #----------------------------Bashrc---------------------------------------
 # Bash config
   [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
-  sudo cp "$SCRIPT_DIR/src/bashrc" "$HOME/.bashrc"
+  sudo cp "$SCRIPT_DIR/src/bashrc" "$HOME/.bashrc" && echo "Copied bashrc"
 
 #----------------------------Tmux----------------------------------------
 # Tmux config
