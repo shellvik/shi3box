@@ -28,7 +28,7 @@ install_pkg() {
               i3blocks
               i3
               i3-wm
-              picom
+              compton
               tmux
               feh 
               lxappearance  
@@ -114,8 +114,31 @@ sudo cp "$SCRIPT_DIR/src/.fehbg" "$HOME/.fehbg"
 sudo cp -r "$SCRIPT_DIR/config/rofi" "$HOME/.config/"
 sudo cp -r "$SCRIPT_DIR/config/terminator" "$HOME/.config/"
 sudo cp -r "$SCRIPT_DIR/config/sublime-text" "$HOME/.config/"
-sudo cp -r "$SCRIPT_DIR/config/picom" "$HOME/.config/"
+#sudo cp -r "$SCRIPT_DIR/config/picom" "$HOME/.config/"
 sudo cp -r "$SCRIPT_DIR/config/kitty" "$HOME/.config/"
+sudo cp -r "$SCRIPT_DIR/config/compton" "$HOME/.config/"
+
+
+
+#---------------------------VPN Config-------------------------------------------------------------
+sudo cp -r "$SCRIPT_DIR/src/vpn-config/" "/etc/"
+
+
+#------------------------------Install Gaps
+
+git clone https://www.github.com/Airblader/i3 i3-gaps
+cd i3-gaps && mkdir -p build && cd build && meson ..
+ninja
+sudo ninja install
+cd ../..
+
+#----------------------
+
+
+
+
+
+
 
 
 
