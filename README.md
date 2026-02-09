@@ -49,7 +49,7 @@ git pull --all
 
 ```bash
 sudo apt update && \
-sudo apt install -y linux-headers-$(uname -r) build-essential dkms
+sudo apt install -y linux-headers-amd64 linux-image-amd64
 ```
 
 #### Enbale Vbox Guest Additions
