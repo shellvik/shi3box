@@ -45,7 +45,7 @@ install_pkg() {
               papirus-icon-theme
               imagemagick
               fonts-jetbrains-mono
-              onts-cascadia-code
+              fonts-cascadia-code
             )
 
   echo -e "\n${CYAN}➜ Updating package lists...${RESET}"
