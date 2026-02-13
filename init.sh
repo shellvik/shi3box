@@ -73,50 +73,50 @@ install_pkg
 fc-cache -fv
 
 # ---------------------------------------------------------------------
-# Fix Locale:
-fix_locale() {
-  if ! locale | grep -q ".UTF-8"; then
-    echo "Fixing locale to UTF-8..."
-    echo 'LANG="en_US.UTF-8"' | sudo tee /etc/default/locale
-    echo 'LC_ALL="en_US.UTF-8"' | sudo tee -a /etc/default/locale
-    sudo locale-gen en_US.UTF-8
-    sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
-  else
-    echo "Locale is already set to UTF-8."
-  fi
-}
-fix_locale
-
+# # Fix Locale:
+# fix_locale() {
+#   if ! locale | grep -q ".UTF-8"; then
+#     echo "Fixing locale to UTF-8..."
+#     echo 'LANG="en_US.UTF-8"' | sudo tee /etc/default/locale
+#     echo 'LC_ALL="en_US.UTF-8"' | sudo tee -a /etc/default/locale
+#     sudo locale-gen en_US.UTF-8
+#     sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+#   else
+#     echo "Locale is already set to UTF-8."
+#   fi
+# }
+# fix_locale
+#
 #----------------------------i3-------------------------------------------
 [ -d "$HOME/.config/i3" ] && mv "$HOME/.config/i3" "$HOME/.config/i3.bak"
-sudo cp -r "$SCRIPT_DIR/config/i3" "$HOME/.config/" && echo "Copied i3 configs"
+cp -r "$SCRIPT_DIR/config/i3" "$HOME/.config/" && echo "Copied i3 configs"
 
 #----------------------------Bashrc---------------------------------------
 # Bash config
   [ -f "$HOME/.bashrc" ] && mv "$HOME/.bashrc" "$HOME/.bashrc.bak"
-  sudo cp "$SCRIPT_DIR/src/bashrc" "$HOME/.bashrc" && echo "Copied bashrc"
+  cp "$SCRIPT_DIR/src/bashrc" "$HOME/.bashrc" && echo "Copied bashrc"
 
 #----------------------------Tmux----------------------------------------
 # Tmux config
 [ -f "$HOME/.tmux.conf" ] && mv "$HOME/.tmux.conf" "$HOME/.tmux.conf.bak"
-sudo cp "$SCRIPT_DIR/src/tmux.conf" "$HOME/.tmux.conf"
+cp "$SCRIPT_DIR/src/tmux.conf" "$HOME/.tmux.conf"
 
 #----------------------------Neovim--------------------------------------
 # Nvim config
 [ -d "$HOME/.config/nvim" ] && mv "$HOME/.config/nvim.bak"
-sudo cp -r "$SCRIPT_DIR/config/nvim" "$HOME/.config/nvim"
+cp -r "$SCRIPT_DIR/config/nvim" "$HOME/.config/nvim"
 
 #---------------------------Wallpaper--------------------------------------
-sudo cp -r "$SCRIPT_DIR/src/wallpaper" "$HOME/.wallpaper"
-sudo cp "$SCRIPT_DIR/src/.fehbg" "$HOME/.fehbg"
+cp -r "$SCRIPT_DIR/src/wallpaper" "$HOME/.wallpaper"
+cp "$SCRIPT_DIR/src/.fehbg" "$HOME/.fehbg"
 
 #----------------------------Rofi, Terminator, Picom, Sublime-Text, Kitty-------------------------------------------
-sudo cp -r "$SCRIPT_DIR/config/rofi" "$HOME/.config/"
-sudo cp -r "$SCRIPT_DIR/config/terminator" "$HOME/.config/"
-sudo cp -r "$SCRIPT_DIR/config/sublime-text" "$HOME/.config/"
+cp -r "$SCRIPT_DIR/config/rofi" "$HOME/.config/"
+cp -r "$SCRIPT_DIR/config/terminator" "$HOME/.config/"
+cp -r "$SCRIPT_DIR/config/sublime-text" "$HOME/.config/"
 #sudo cp -r "$SCRIPT_DIR/config/picom" "$HOME/.config/"
-sudo cp -r "$SCRIPT_DIR/config/kitty" "$HOME/.config/"
-sudo cp -r "$SCRIPT_DIR/config/compton" "$HOME/.config/"
+cp -r "$SCRIPT_DIR/config/kitty" "$HOME/.config/"
+cp -r "$SCRIPT_DIR/config/compton" "$HOME/.config/"
 
 
 
