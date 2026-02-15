@@ -9,7 +9,7 @@ font pango:RobotoMono Nerd Font Regular 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -148,10 +148,8 @@ default_border normal
 # feh - Wallpaper Setter
 exec_always --no-startup-id sh ~/.fehbg
 
-# compton - Compositing Manager for Shadows and Opacity
-exec_always --no-startup-id compton -b --config ~/.config/compton/compton.conf
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
-# VM Clipboard Fix
 
 # Resize Bindings
 bindsym $mod+Ctrl+Shift+Right resize shrink width 10 px or 10 ppt
