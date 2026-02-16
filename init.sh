@@ -29,6 +29,7 @@ install_pkg() {
               i3
               i3-wm
               compton
+              picom
               tmux
               feh 
               lxappearance  
