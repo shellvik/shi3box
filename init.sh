@@ -123,6 +123,9 @@ cp -r "$SCRIPT_DIR/config/kitty" "$HOME/.config/"
 
 #---------------------------VPN Config-------------------------------------------------------------
 sudo cp -r "$SCRIPT_DIR/src/vpn-config/" "/etc/"
+sudo chmod +x "/etc/vpn-config/*.sh"
+sudo ln -sf /etc/vpn-config/shvpn.sh /usr/bin/shvpn
+sudo cp "$SCRIPT_DIR/src/vpn-config/default.conf" "/etc/openvpn/config.conf"
 
 
 #------------------------------Install Gaps
