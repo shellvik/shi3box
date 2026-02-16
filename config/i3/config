@@ -3,13 +3,13 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:RobotoMono Nerd Font Regular 9
+font pango:Cascadia Code Regular 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -119,13 +119,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# i3bar with i3blocks
+#i3bar with i3blocks
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
         i3bar_command i3bar -t
-        position top
+        position top 
         height 26
-        font pango:RobotoMono Nerd Font Regular 7.5
+        font pango:Cascadia Code SemiBold 10
         colors {
             statusline #EEEEEE
             background #1C1D2B88
@@ -135,21 +135,55 @@ bar {
 }
 
 # i3-gaps
-for_window [class="^.*"] border pixel 2
-gaps inner 2
-gaps outer 4
+# for_window [class="^.*"] border pixel 1.5
+ gaps inner 6
+ gaps outer 6
+#
+# #client.focused  #82c8ff #82c8ff #dddddd
+# client.focused  #7FFF00 #7FFF00 #dddddd
+# client.focused_inactive #333333 #333333 #888888
+# client.unfocused #333333 #333333 #888888
+# client.urgent #900000 #900000 #ffffff
+# default_border normal
+#
 
-client.focused  #82c8ff #82c8ff #dddddd
-client.focused_inactive #333333 #333333 #888888
-client.unfocused #333333 #333333 #888888
-client.urgent #900000 #900000 #ffffff
-default_border normal
+# Active window — bright HTB green
+# client.focused          #9FEF00 #9FEF00 #000000 #9FEF00 #9FEF00
+#
+# # Focused but inactive container
+# client.focused_inactive #5E8C00 #2B2B2B #DDDDDD #5E8C00 #5E8C00
+#
+# # Unfocused windows — dim HTB green
+# client.unfocused        #5E8C00 #1A1A1A #AAAAAA #5E8C00 #5E8C00
+#
+# # Urgent windows
+# client.urgent           #FF0033 #FF0033 #FFFFFF #FF0033 #FF0033
+#
+# # Border thickness
+# for_window [class="^.*"] border pixel 2
+#
+
+# Active window — soft grey highlight
+client.focused          #5A5A5A #5A5A5A #DDDDDD #5A5A5A #5A5A5A
+
+# Focused but inactive container
+client.focused_inactive #3A3A3A #242424 #CCCCCC #3A3A3A #3A3A3A
+
+# Unfocused windows — dark subtle border
+client.unfocused        #2E2E2E #1A1A1A #AAAAAA #2E2E2E #2E2E2E
+
+# Urgent windows — muted red (optional)
+client.urgent           #8B0000 #8B0000 #FFFFFF #8B0000 #8B0000
+
+# Border thickness
+for_window [class="^.*"] border pixel 2
+
+
 
 # feh - Wallpaper Setter
 exec_always --no-startup-id sh ~/.fehbg
 
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
-
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Resize Bindings
 bindsym $mod+Ctrl+Shift+Right resize shrink width 10 px or 10 ppt
@@ -159,3 +193,4 @@ bindsym $mod+Ctrl+Shift+Left resize grow width 10 px or 10 ppt
 
 # screenshot
 bindsym $mod+P exec flameshot gui
+

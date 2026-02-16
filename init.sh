@@ -115,7 +115,7 @@ cp "$SCRIPT_DIR/src/.fehbg" "$HOME/.fehbg"
 cp -r "$SCRIPT_DIR/config/rofi" "$HOME/.config/"
 cp -r "$SCRIPT_DIR/config/terminator" "$HOME/.config/"
 cp -r "$SCRIPT_DIR/config/sublime-text" "$HOME/.config/"
-sudo cp -r "$SCRIPT_DIR/config/picom" "$HOME/.config/"
+cp -r "$SCRIPT_DIR/config/picom" "$HOME/.config/"
 cp -r "$SCRIPT_DIR/config/kitty" "$HOME/.config/"
 #cp -r "$SCRIPT_DIR/config/compton" "$HOME/.config/"
 
