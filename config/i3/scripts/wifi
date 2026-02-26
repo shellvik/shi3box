@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+SSID=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
+
+if [ -n "$SSID" ]; then
+echo " $SSID"
+else
+echo " NoWiFi"
+fi
+

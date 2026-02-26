@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+MEM=$(free -h | awk '/Mem:/ {print $3 "/" $2}')
+
+echo " $MEM"
+

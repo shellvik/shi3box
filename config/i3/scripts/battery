@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+BAT="/sys/class/power_supply/BAT0/capacity"
+
+if [ -f "$BAT" ]; then
+LEVEL=$(cat "$BAT")
+echo " ${LEVEL}%"
+else
+echo " N/A"
+fi
+

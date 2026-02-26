@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo " $(date '+%Y-%m-%d')  $(date '+%H:%M:%S')"
+

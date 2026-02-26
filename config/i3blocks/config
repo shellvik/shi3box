@@ -1,0 +1,56 @@
+# i3blocks config for shi3box
+
+# VM safe + HTB aware + Nerd Font ready
+
+separator_block_width=15
+markup=pango
+
+# ---------------- VPN / IP ----------------
+
+[ip]
+command=~/.config/i3/scripts/ip
+interval=10
+color=#00FF87
+
+# ---------------- WiFi -------------------
+
+[wifi]
+command=~/.config/i3/scripts/wifi
+interval=5
+color=#5FD7FF
+
+# ---------------- Ethernet ---------------
+
+[ethernet]
+command=~/.config/i3/scripts/ethernet
+interval=5
+color=#5FD7FF
+
+# ---------------- CPU --------------------
+
+[cpu]
+command=~/.config/i3/scripts/cpu
+interval=2
+color=#FFAF00
+
+# ---------------- Memory -----------------
+
+[memory]
+command=~/.config/i3/scripts/memory
+interval=5
+color=#FF5F87
+
+# ---------------- Battery ----------------
+
+[battery]
+command=~/.config/i3/scripts/battery
+interval=30
+color=#AFFF00
+
+# ---------------- Date Time --------------
+
+[datetime]
+command=~/.config/i3/scripts/datetime
+interval=1
+color=#FFFFFF
+

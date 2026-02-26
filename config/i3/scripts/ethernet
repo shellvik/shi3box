@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+ETH=$(ip link | grep "state UP" | grep -E "eth|enp" | awk -F: '{print $2}' | xargs)
+
+if [ -n "$ETH" ]; then
+echo " $ETH"
+else
+echo " NoEth"
+fi
+
