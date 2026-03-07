@@ -1,4 +1,6 @@
 ## shi3box
+![shi3box-1.png](/src/shi3box-1.png)
+![shi3box-2.png](/src/shi3box-2.png)
 
 - Configs for i3, nvim, tmux and general stuff for ctfs/pentest.
 
