@@ -4,7 +4,9 @@ set -Eeuo pipefail
 GREEN="\033[1;32m"
 RESET="\033[0m"
 
-REPO_DIR="$(pwd)"
+# Directory of this script
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 FONT_DIR="$HOME/.local/share/fonts"
 CONFIG_DIR="$HOME/.config"
 
@@ -18,17 +20,15 @@ cat << "EOF"
 ███████║██║  ██║██║██████╔╝██████╔╝╚██████╔╝██╔╝ ██╗
 ╚══════╝╚═╝  ╚═╝╚═╝╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
 
-```
                    x@sh3llvik
-```
-
 EOF
 echo -e "${RESET}"
 }
 
 install_packages() {
-echo "[+] Installing packages..."
+echo "[+] Updating system..."
 sudo apt update && sudo apt upgrade -y
+
 echo "[+] Installing packages..."
 
 sudo apt install -y \
@@ -64,15 +64,12 @@ CascadiaMono
 )
 
 for font in "${fonts[@]}"; do
-url="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/${font}.zip"
-zip="/tmp/${font}.zip"
+    url="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/${font}.zip"
+    zip="/tmp/${font}.zip"
 
-```
-wget -q -O "$zip" "$url"
-unzip -o "$zip" -d "$FONT_DIR"
-rm "$zip"
-```
-
+    wget -q -O "$zip" "$url"
+    unzip -o "$zip" -d "$FONT_DIR"
+    rm -f "$zip"
 done
 
 fc-cache -fv
@@ -85,13 +82,21 @@ sudo unzip -o "$REPO_DIR/src/Material-Black-Lime-Numix-FLAT.zip" -d /usr/share/i
 
 install_wallpaper() {
 echo "[+] Installing wallpapers..."
+
 mkdir -p "$HOME/.wallpaper"
-cp -r "$REPO_DIR/src/wallpaper/"* "$HOME/.wallpaper/" 2>/dev/null || true
-cp "$REPO_DIR/src/fehbg" "$HOME/.fehbg"
+
+if [ -d "$REPO_DIR/src/wallpaper" ]; then
+    cp -r "$REPO_DIR/src/wallpaper/"* "$HOME/.wallpaper/" 2>/dev/null || true
+fi
+
+if [ -f "$REPO_DIR/src/fehbg" ]; then
+    cp "$REPO_DIR/src/fehbg" "$HOME/.fehbg"
+fi
 }
 
 install_vpn() {
 echo "[+] Installing VPN configs..."
+
 sudo cp -r "$REPO_DIR/src/vpn-config" /etc/
 sudo chmod +x /etc/vpn-config/*.sh
 sudo cp /etc/vpn-config/default.conf /etc/openvpn/
@@ -118,7 +123,7 @@ i3
 )
 
 for cfg in "${configs[@]}"; do
-cp -r "$REPO_DIR/config/$cfg" "$CONFIG_DIR/"
+    cp -r "$REPO_DIR/config/$cfg" "$CONFIG_DIR/"
 done
 
 chmod +x "$CONFIG_DIR/i3/scripts/"* 2>/dev/null || true
@@ -141,4 +146,3 @@ echo "[+] Logout and select the i3 session."
 }
 
 main
-
