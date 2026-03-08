@@ -1,4 +1,5 @@
 ## shi3box
+
 ![shi3box-1.png](/src/shi3box-1.png)
 ![shi3box-2.png](/src/shi3box-2.png)
 
@@ -33,7 +34,7 @@ git clone --depth 1 https://github.com/shellvik/shi3box
 - _Go into the new directory and retrive the rest of the clone_:
 
 ```bash
-cd shvbox && \
+cd shi3box && \
 git fetch --unshallow
 ```
 

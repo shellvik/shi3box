@@ -28,11 +28,27 @@ echo -e "${RESET}"
 
 install_packages() {
 echo "[+] Installing packages..."
-sudo apt update
-sudo apt install -y 
-i3 i3blocks terminator synapse caja lxappearance 
-tmux picom feh npm lsd flameshot 
-neovim rofi unzip wget curl
+sudo apt update && sudo apt upgrade -y
+echo "[+] Installing packages..."
+
+sudo apt install -y \
+i3 \
+i3blocks \
+terminator \
+synapse \
+caja \
+lxappearance \
+tmux \
+picom \
+feh \
+npm \
+lsd \
+flameshot \
+neovim \
+rofi \
+unzip \
+wget \
+curl
 }
 
 install_fonts() {
