@@ -39,7 +39,6 @@ synapse \
 caja \
 lxappearance \
 tmux \
-picom \
 feh \
 npm \
 lsd \
@@ -120,6 +119,7 @@ terminator
 nvim
 picom
 i3
+rofi
 )
 
 for cfg in "${configs[@]}"; do
