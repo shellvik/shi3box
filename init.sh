@@ -86,7 +86,7 @@ echo "[+] Installing wallpapers..."
 mkdir -p "$HOME/.wallpaper"
 
 if [ -d "$REPO_DIR/src/wallpaper" ]; then
-    cp -r "$REPO_DIR/src/wallpaper/"* "$HOME/.wallpaper/" 2>/dev/null || true
+    cp -r "$REPO_DIR/src/wallpaper/*" "$HOME/.wallpaper/" 2>/dev/null || true
 fi
 
 if [ -f "$REPO_DIR/src/fehbg" ]; then
