@@ -6,7 +6,7 @@
     icon_bell = False
     background_darkness = 0.0
     cursor_shape = underline
-    font = JetBrains Mono 14
+    font = JetBrainsMonoNL Nerd Font Mono 14
     foreground_color = "#00ff00"
     show_titlebar = False
     scrollbar_position = hidden
