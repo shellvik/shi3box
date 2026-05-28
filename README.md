@@ -112,3 +112,9 @@ shvpn {aca|lab}
 - Did not insall picom - causing trouble.
 
 ---
+### TMUX Config
+- Install TPM:
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+- Then Press `CTRL+b` -> `I`(CAP)
