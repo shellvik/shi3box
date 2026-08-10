@@ -5,6 +5,58 @@ local t = ls.text_node
 local i = ls.insert_node
 
 return {
+  -- Snippet X: snippet names:
+  s("snip", {
+    t({
+      "Available C++ snippets:",
+      "",
+      "mini - Minimal template" 
+      "beg  - Basic Competitive Programming template",
+      "ffj  - Full Competitive Programming template",
+    }),
+    i(1),
+  }),
+
+  -- Snippet 0: Minimal CP template
+
+  -- Snippet 3: Simple CP template
+s("mini", {
+  t({
+    "#include <bits/stdc++.h>",
+    "using namespace std;",
+    "",
+    "#define int long long",
+    "#define all(v) v.begin(), v.end()",
+    "#define pb push_back",
+    "#define fi first",
+    "#define se second",
+    "#define pii pair<int,int>",
+    "",
+    "const int MOD = 1e9 + 7;",
+    "const int INF = 2e18;",
+    "",
+    "void solve() {",
+    "    ",
+  }),
+  i(2, "// your solution here"),
+  t({
+    "",
+    "}",
+    "",
+    "signed main() {",
+    "    ios_base::sync_with_stdio(false);",
+    "    cin.tie(NULL);",
+    "    int t = 1;",
+    "    ",
+  }),
+  i(1, "cin >> t;"),
+  t({
+    "",
+    "    while (t--) solve();",
+    "    return 0;",
+    "}",
+  }),
+}),
   -- Snippet 1: basic CP template
   s("beg", {
     t({
@@ -130,3 +182,4 @@ return {
     }),
   }),
 }
+
